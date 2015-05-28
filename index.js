@@ -2,8 +2,6 @@ var _ = require("lodash");
 var DOMParser = require("xmldom").DOMParser;
 var domParser = new DOMParser();
 
-module.exports = citygmlSRS;
-
 var citygmlSRS = function(xml) {
   var xmlDOM = domParser.parseFromString(xml);
   var srs = getSRS(xmlDOM);
@@ -35,3 +33,5 @@ var getSRS = function(xmlDOM) {
 
   return srs;
 };
+
+module.exports = citygmlSRS;
